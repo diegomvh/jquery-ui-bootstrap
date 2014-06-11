@@ -34,7 +34,7 @@
 
 .ui-tabs-nav .ui-state-default{
 	border: 0;
-	@include ui-box-shadow( none );
+	@include ui-box-shadow1( none );
 }
 .ui-tabs {
 	.ui-tabs-nav{

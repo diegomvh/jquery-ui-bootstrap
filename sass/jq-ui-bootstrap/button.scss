@@ -53,20 +53,20 @@ fieldset[disabled] ui-button.ui-state-active {
   border-color: #cccccc;
 }
 
-.ui-btn-large{
-	.btn-lg;
+.ui-btn-large {
+	@extend btn-lg;
 }
 
-.ui-btn-small{
-	.btn-sm;
+.ui-btn-small {
+	@extend btn-sm;
 }
 
 .ui-btn-mini {
-	.btn-xs;
+	@extend btn-xs;
 }
 
 .ui-btn-block {
-	.btn-block;
+	@extend btn-block;
 }
 
 .ui-btn-block + .ui-btn-block {

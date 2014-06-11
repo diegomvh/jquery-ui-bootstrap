@@ -6,38 +6,37 @@
  */
 
 // Border Radius
-#ui-border-radius {
-	.topLeft ( $radius: 4px ) {
-		-moz-border-radius-topleft: $radius;
-		-webkit-border-top-left-radius: $radius;
-		-khtml-border-top-left-radius: $radius;
-		border-top-left-radius: $radius;
-	}
-	.topRight ( $radius: 4px ) {
-		-moz-border-radius-topright: $radius;
-		-webkit-border-top-right-radius: $radius;
-		-khtml-border-top-right-radius: $radius;
-		border-top-right-radius: $radius;
-	}
-	.bottomLeft ( $radius: 4px ) {
-		-moz-border-radius-bottomleft: $radius;
-		-webkit-border-bottom-left-radius: $radius;
-		-khtml-border-bottom-left-radius: $radius;
-		border-bottom-left-radius: $radius;
-	}
-	.bottomRight ( $radius: 4px ) {
-		-moz-border-radius-bottomright: $radius;
-		-webkit-border-bottom-right-radius: $radius;
-		-khtml-border-bottom-right-radius: $radius;
-		border-bottom-right-radius: $radius;
-	}
+@mixin ui-border-radius-topLeft( $radius: 4px ) {
+    -moz-border-radius-topleft: $radius;
+    -webkit-border-top-left-radius: $radius;
+    -khtml-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin ui-border-radius-topRight( $radius: 4px ) {
+    -moz-border-radius-topright: $radius;
+    -webkit-border-top-right-radius: $radius;
+    -khtml-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+@mixin ui-border-radius-bottomLeft( $radius: 4px ) {
+    -moz-border-radius-bottomleft: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    -khtml-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin ui-border-radius-bottomRight( $radius: 4px ) {
+    -moz-border-radius-bottomright: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+    -khtml-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
 	
-	@include border( $topLeft:6px,  $topRight:6px, $bottomRight:6px, $bottomLeft:6px ) {
-		-webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
-		-moz-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
-		border-radius: $topLeft $topRight $bottomRight $bottomLeft;
-	}
-	
+@mixin ui-border-radius-border( $topLeft:6px,  $topRight:6px, $bottomRight:6px, $bottomLeft:6px ) {
+    -webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+    -moz-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+    border-radius: $topLeft $topRight $bottomRight $bottomLeft;
 }
 
 @mixin ui-border-radius( $radius ){
@@ -47,22 +46,19 @@
 	@include ui-border-radius-bottomRight ( $radius );
 }
 
-#ui-gradient {
-	@include vertical($startColor, $endColor){
-		@include gradient-vertical($startColor, $endColor);
-	}
-
-	@include vertical-three-colors($startColor, $midColor, $colorStop, $endColor) {
-		@include gradient-vertical-three-colors($startColor, $midColor, $colorStop, $endColor);
-	}
+@mixin ui-gradient-vertical ($startColor, $endColor){
+    @include gradient-vertical($startColor, $endColor);
 }
 
-// Transitions
-@mixin ui-transition( $transition ){
+@mixin ui-gradient-vertical-three-colors($startColor, $midColor, $colorStop, $endColor) {
+    @include gradient-vertical-three-colors($startColor, $midColor, $colorStop, $endColor);
+}
+
+@mixin ui-transition1( $transition ){
 	@include transition( $transition );
 }
 
-@mixin ui-transition( $arg1, $arg2 ) {
+@mixin ui-transition2( $arg1, $arg2 ) {
 	-webkit-transition: $arg1, $arg2;
 	-moz-transition: $arg1, $arg2;
 	-ms-transition: $arg1, $arg2;
@@ -70,30 +66,29 @@
 	transition: $arg1, $arg2;
 }
 
-// Drop shadows
-@mixin ui-box-shadow( $shadow ){
+@mixin ui-box-shadow1( $shadow ){
 	@include box-shadow( $shadow );
 }
 
-@mixin ui-box-shadow( $arg1, $arg2 ){
+@mixin ui-box-shadow2( $arg1, $arg2 ){
 	-webkit-box-shadow: $arg1, $arg2;
 	-moz-box-shadow: $arg1, $arg2;
 	box-shadow: $arg1, $arg2;
 }
 
-@mixin ui-button-variant($color; $background; $border) {
-	@include button-variant($color; $background; $border);
+@mixin ui-button-variant($color, $background, $border) {
+	@include button-variant($color, $background, $border);
 }
 
-.ui-button-size ($padding-large-vertical; $padding-large-horizontal; $font-size-large; $line-height-large; $border-radius-large){
-	@include button-size($padding-large-vertical; $padding-large-horizontal; $font-size-large; $line-height-large; $border-radius-large);
+@mixin ui-button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large){
+	@include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 }
 
 .ui-btn-lg{
-	@include ui-button-size($padding-large-vertical; $padding-large-horizontal; $font-size-large; $line-height-large; $border-radius-large);
+	@include ui-button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 }
 .ui-btn-xs{
-	@include ui-button-size($padding-small-vertical; $padding-small-horizontal; $font-size-small; $line-height-small; $border-radius-small);
+	@include ui-button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
 }
 .ui-btn-sm{
     padding: 1px 5px;

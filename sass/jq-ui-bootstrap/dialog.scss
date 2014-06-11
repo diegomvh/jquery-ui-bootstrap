@@ -20,7 +20,7 @@
 	background-color: #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: $border-radius-large;
-	@include ui-box-shadow(0 3px 7px rgba(0, 0, 0, 0.3));
+	@include ui-box-shadow1(0 3px 7px rgba(0, 0, 0, 0.3));
 	outline: medium none;
 	z-index: 1050;
 	.ui-dialog-titlebar { 
@@ -87,7 +87,7 @@
 		padding: 5px 15px 5px;
 		border-top: 1px solid darken($ui-gray-lighter,10%);
 		@include ui-border-radius-border( 0, 0, 6px, 6px );
-		@include ui-box-shadow( inset 0 1px 0 $ui-white );
+		@include ui-box-shadow1( inset 0 1px 0 $ui-white );
 		margin-bottom: 0;
 	}
 	.ui-dialog-buttonpane .ui-dialog-buttonset {
@@ -124,7 +124,7 @@
     color: #333333;
     background-color: #ffffff;
     border: 1px solid #cccccc;
-    @include ui-transition( 0.1s linear all);
+    @include ui-transition1( 0.1s linear all);
     overflow: visible;
 	&.ui-state-hover{
 		color: #333333;

@@ -25,7 +25,7 @@
 
 .ui-widget-content {
 	border: 1px solid $gray-light;
-	background: $body-bg url("@{ui-image-dir}/ui-bg_glass_75_@{ui-body-bg-num}_1x400.png") 50% 50% repeat-x;
+	background: $body-bg url("#{$ui-image-dir}/ui-bg_glass_75_#{$ui-body-bg-num}_1x400.png") 50% 50% repeat-x;
 	color: $gray-dark;
 }
 
